@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import GameLogic from './GameLogic';
-import { newGame } from '../actions/game';
 import MakeGuessFormContainer from './MakeGuessFormContainer';
 import NewGameButton from './NewGameButton';
+import makeGuess from '../actions/game';
 
 class GameLogicContainer extends React.PureComponent {
 
@@ -11,7 +11,7 @@ class GameLogicContainer extends React.PureComponent {
     return(
       <div>
         <GameLogic word={ this.props.game.word} guesses={this.props.game.guesses} />
-        <MakeGuessFormContainer />
+        <MakeGuessFormContainer guesses={ this.props.makeGuess } />
         <br/>
         <NewGameButton />
       </div>

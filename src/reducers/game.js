@@ -8,15 +8,16 @@ const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+
   case 'NEW_GAME':
-    return
-      action.payload
+    return action.payload
 
   case 'MAKE_GUESS':
     return {
       ...state,
-      //action.payload.guesses
-      guesses: state.guesses.concat(action.payload)
+      //array of guesses in redux-reduce
+      guesses:state.guesses(action.payload)
+
     }
 
   default:

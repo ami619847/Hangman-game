@@ -13,7 +13,7 @@ class MakeGuessFormContainer extends React.PureComponent {
   }
 
   render() {
-    return <MakeGuessForm makeGuess={ this.props.makeGuess } />
+    return <MakeGuessForm makeGuess={ this.makeGuess } />
   }
 }
 

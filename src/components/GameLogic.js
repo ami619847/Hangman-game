@@ -7,19 +7,19 @@ export default function GameLogic(props) {
   !game.wrongGuessLimit(props.word, props.guesses)) {
     return(
       <div>
-        <p>Your guesses: { game.showGuess(props.word, props.guesses) }</p>
+        <br/>
+        <h1 className="word">{ game.showGuess(props.word, props.guesses) }</h1>
         <p>Wrong guesses: { game.wrongGuessCount(props.word, props.guesses) }</p>
       </div>
     )
   }
-
   //win statement
   else if (game.isWinner(props.word, props.guesses)) {
     return (
       <p>You won!</p>
     )
   }
-    //lost statement
+  //lost statement
   else {
     return(
       <p>You lost!</p>

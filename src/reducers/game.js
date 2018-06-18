@@ -15,9 +15,8 @@ const reducer = (state = initialState, action = {}) => {
   case 'MAKE_GUESS':
     return {
       ...state,
-      //array of guesses in redux-reduce
+      //array of guesses
       guesses:state.guesses(action.payload)
-
     }
 
   default:

@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react';
-import { makeGuess } from '../actions/game';
-//import { isWinner } from '../lib/game';
+import { showGuess } from '../lib/game';
 
-//props and state
 export default class MakeGuessForm extends React.PureComponent {
 
   handleChange = (event) => {
@@ -16,12 +14,14 @@ export default class MakeGuessForm extends React.PureComponent {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.makeGuess(this.state.guesses)
+
+    this.props.makeGuess(this.props.word, this.props.guesses)
   }
 
   render() {
     return (
       <div>
+        <br/><br/>
         <form onSubmit={ this.handleSubmit }>
           <label>Your guess:
             <br/>

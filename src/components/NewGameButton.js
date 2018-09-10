@@ -1,9 +1,13 @@
 import React, { PureComponent } from 'react';
+import { newGame } from '../actions/game';
+import { connect } from 'react-redux';
 
-export default class NewGameButton extends PureComponent {
+class NewGameButton extends PureComponent {
   render() {
     return(
-      <button onClick={ this.props.newGame }>New Game</button>
+      <button onClick={ this.props.newGame }>play again</button>
     )
   }
 }
+
+export default connect(null, {newGame})(NewGameButton) 

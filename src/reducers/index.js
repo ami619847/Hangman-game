@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
-import game from './game'
+import guesses from './guesses'
+import word from './word'
 
 export default combineReducers({
-  game
+  guesses, 
+  word
 })

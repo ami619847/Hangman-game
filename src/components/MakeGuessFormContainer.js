@@ -1,19 +1,23 @@
 import * as React from 'react'
-import MakeGuessForm from './MakeGuessForm'
-import { connect } from 'react-redux'
 import { makeGuess } from '../actions/game'
+import { connect } from 'react-redux'
 
 class MakeGuessFormContainer extends React.PureComponent {
-  makeGuess = (guesses) => {
-    this.props.makeGuess({
-      type: 'MAKE_GUESS',
-      payload: { ...guesses }
-    })
+  handleSubmit = (event) => {
+    event.preventDefault()
+    const [input] = event.target.children
+    this.props.makeGuess(input.value)
+    input.value = ""
   }
 
   render() {
-    return <MakeGuessForm makeGuess={ this.makeGuess } />
+    return (
+      <form onSubmit = {this.handleSubmit}>
+          <input type="text" maxLength="1"/>
+          <button type="submit" value="submit">submit</button> 
+      </form>    
+    )
   }
 }
 
-export default connect()(MakeGuessFormContainer)
+export default connect(null, { makeGuess })(MakeGuessFormContainer)

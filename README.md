@@ -23,10 +23,11 @@ This is a week 3 homework assignment using React and Redux. The core logic for t
 1. The letters of the word should initially be displayed as _underscores_ and as the player makes correct guesses, the letters should appear. You can use the function `showGuess` from the game library.
 
 1. The user must be able to guess one letter at a time by dispatching the `MAKE_GUESS` action. Which UI elements you use to do this is up to you.
-    > Hint: you could use a button per letter, or a text input element.
 
 1. The number of incorrect guesses should be displayed on the page. Use the `wrongGuessCount` function in the library.
 
 1. There should be a button to create a new game. When you click it, an action of type `NEW_GAME` should be dispatched. The result should be that a new random word is selected and the guesses are reset/emptied.
 
 1. When the user has won or lost, there should be a message on the page saying so. _Use the functions in the provided library._
+
+<p align="center"><img src="./src/images/Screenshot.png"></p>
